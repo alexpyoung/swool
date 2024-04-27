@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct swoolApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }

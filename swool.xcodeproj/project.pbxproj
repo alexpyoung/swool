@@ -7,20 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA960DE42BDD9B4A00B8324F /* swoolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA960DE32BDD9B4A00B8324F /* swoolApp.swift */; };
-		FA960DE62BDD9B4A00B8324F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA960DE52BDD9B4A00B8324F /* ContentView.swift */; };
+		FA960DE42BDD9B4A00B8324F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA960DE32BDD9B4A00B8324F /* App.swift */; };
+		FA960DE62BDD9B4A00B8324F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA960DE52BDD9B4A00B8324F /* HomeView.swift */; };
 		FA960DE82BDD9B4C00B8324F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA960DE72BDD9B4C00B8324F /* Assets.xcassets */; };
 		FA960DEB2BDD9B4C00B8324F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA960DEA2BDD9B4C00B8324F /* Preview Assets.xcassets */; };
 		FA960DF32BDD9DCC00B8324F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = FA960DF22BDD9DCC00B8324F /* Realm */; };
 		FA960DF52BDD9DCC00B8324F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FA960DF42BDD9DCC00B8324F /* RealmSwift */; };
+		FA960DF82BDD9EA800B8324F /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA960DF72BDD9EA800B8324F /* Set.swift */; };
+		FA960DFA2BDDA79900B8324F /* Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA960DF92BDDA79900B8324F /* Weight.swift */; };
+		FA960DFC2BDDA80F00B8324F /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA960DFB2BDDA80F00B8324F /* Exercise.swift */; };
+		FA960DFE2BDDACF700B8324F /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA960DFD2BDDACF700B8324F /* Workout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA960DE02BDD9B4A00B8324F /* swool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swool.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA960DE32BDD9B4A00B8324F /* swoolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swoolApp.swift; sourceTree = "<group>"; };
-		FA960DE52BDD9B4A00B8324F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FA960DE32BDD9B4A00B8324F /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		FA960DE52BDD9B4A00B8324F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FA960DE72BDD9B4C00B8324F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA960DEA2BDD9B4C00B8324F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FA960DF72BDD9EA800B8324F /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
+		FA960DF92BDDA79900B8324F /* Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weight.swift; sourceTree = "<group>"; };
+		FA960DFB2BDDA80F00B8324F /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		FA960DFD2BDDACF700B8324F /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +63,9 @@
 		FA960DE22BDD9B4A00B8324F /* swool */ = {
 			isa = PBXGroup;
 			children = (
-				FA960DE32BDD9B4A00B8324F /* swoolApp.swift */,
-				FA960DE52BDD9B4A00B8324F /* ContentView.swift */,
+				FA960DFF2BDDB52D00B8324F /* Views */,
+				FA960DF62BDD9E6200B8324F /* Models */,
+				FA960DE32BDD9B4A00B8324F /* App.swift */,
 				FA960DE72BDD9B4C00B8324F /* Assets.xcassets */,
 				FA960DE92BDD9B4C00B8324F /* Preview Content */,
 			);
@@ -69,6 +78,25 @@
 				FA960DEA2BDD9B4C00B8324F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FA960DF62BDD9E6200B8324F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA960DF72BDD9EA800B8324F /* Set.swift */,
+				FA960DF92BDDA79900B8324F /* Weight.swift */,
+				FA960DFB2BDDA80F00B8324F /* Exercise.swift */,
+				FA960DFD2BDDACF700B8324F /* Workout.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FA960DFF2BDDB52D00B8324F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA960DE52BDD9B4A00B8324F /* HomeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,8 +176,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA960DE62BDD9B4A00B8324F /* ContentView.swift in Sources */,
-				FA960DE42BDD9B4A00B8324F /* swoolApp.swift in Sources */,
+				FA960DFC2BDDA80F00B8324F /* Exercise.swift in Sources */,
+				FA960DE62BDD9B4A00B8324F /* HomeView.swift in Sources */,
+				FA960DE42BDD9B4A00B8324F /* App.swift in Sources */,
+				FA960DF82BDD9EA800B8324F /* Set.swift in Sources */,
+				FA960DFA2BDDA79900B8324F /* Weight.swift in Sources */,
+				FA960DFE2BDDACF700B8324F /* Workout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +310,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"swool/Preview Content\"";
+				DEVELOPMENT_TEAM = ML4K9AC7JP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -306,6 +339,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"swool/Preview Content\"";
+				DEVELOPMENT_TEAM = ML4K9AC7JP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
