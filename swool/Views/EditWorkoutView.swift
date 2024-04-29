@@ -2,66 +2,41 @@
 //  EditWorkoutView.swift
 //  swool
 //
-//  Created by Alex Young on 4/27/24.
+//  Created by Alex Young on 4/29/24.
 //
 
 import RealmSwift
 import SwiftUI
 
-enum Laterality: String, CaseIterable {
-    case unilateral
-    case bilateral
-}
-
 struct EditWorkoutView: View {
 
-    @Environment(\.dismiss) private var dismiss
-    @Environment(\.realm) private var realm
-    @ObservedRealmObject private var exercise = Exercise()
-    @State private var date = Date()
-    @State private var laterality: Laterality = .unilateral
+    @ObservedRealmObject var workout: Workout
+    @State private var pickerIsVisible = false
 
     var body: some View {
-        NavigationView {
-            VStack {
-                TextField("Exercise Name", text: $exercise.name)
+        VStack {
+            HStack {
+                Text(workout.date.format("MM/dd/yy 'at' h:mm a"))
                     .font(.title)
                     .fontWeight(.bold)
-                DatePicker("Date", selection: $date, displayedComponents: .date)
-                Picker("Laterality", selection: $laterality) {
-                    ForEach(Laterality.allCases, id: \.rawValue) {
-                        Text($0.rawValue.capitalized)
+                    .onTapGesture {
+                        pickerIsVisible = true
                     }
-                }
-                .pickerStyle(.segmented)
-                List(exercise.sets.enumerated().map { $0 }, id: \.offset, rowContent: EditSetView.init)
-                    .listStyle(.plain)
-                Button("Add New Set") {
-                    $exercise.sets.append(Set())
-                }
                 Spacer()
             }
-            .padding(.horizontal, 16)
-            .navigationBarItems(trailing: close)
-        }
-        .onAppear { try? onAppear() }
-    }
-
-    private var close: some View {
-        Button("Done") {
-            if let exercise = self.exercise.thaw(),
-               let realm = exercise.realm {
-                try? realm.write {
-                    realm.add(Workout(date: date, exercise: exercise))
-                }
+            if let exercise = workout.exercise {
+                EditExerciseView(exercise: exercise)
+            } else {
+                EmptyView()
             }
-            dismiss()
         }
-    }
-
-    private func onAppear() throws {
-        try realm.write {
-            realm.add(exercise)
+        .navigationBarTitleDisplayMode(.inline)
+        .padding(.horizontal, .medium)
+        .sheet(isPresented: $pickerIsVisible) {
+            DatePicker("", selection: $workout.date)
+                .labelsHidden()
+                .datePickerStyle(.graphical)
+                .presentationDetents([.height(400)])
         }
     }
 }

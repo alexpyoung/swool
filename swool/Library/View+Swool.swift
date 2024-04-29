@@ -9,7 +9,7 @@ import SwiftUI
 
 extension View {
 
-    func roundedBorder(radius: CGFloat = 4, color: Color = .gray, stroke: CGFloat = 0.5) -> some View {
+    func roundedBorder(radius: CGFloat = .xsmall, color: Color = .gray, stroke: CGFloat = 0.5) -> some View {
         self.cornerRadius(radius)
             .overlay(
                 RoundedRectangle(cornerRadius: radius).stroke(color, lineWidth: stroke)

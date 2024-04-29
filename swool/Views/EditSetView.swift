@@ -13,12 +13,12 @@ struct EditSetView: View {
     let index: Int
     @ObservedRealmObject var set: Set
     @State private var modalIsVisible = false
-
+    
     var body: some View {
         HStack {
             Text("\(index + 1).")
             Text(set.repetitions.description)
-                .frame(minWidth: 32)
+                .frame(minWidth: .large)
                 .roundedBorder()
                 .onTapGesture {
                     modalIsVisible = true

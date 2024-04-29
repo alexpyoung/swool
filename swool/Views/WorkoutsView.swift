@@ -13,7 +13,9 @@ private struct ListItemView: View {
     @ObservedRealmObject var workout: Workout
 
     var body: some View {
-        Text("\(workout.date) - \(workout.exercise?.name ?? "")")
+        NavigationLink(destination: EditWorkoutView(workout: workout)) {
+            Text(workout.date.humanReadable())
+        }
     }
 }
 
@@ -21,7 +23,7 @@ struct WorkoutsView: View {
 
     @Environment(\.realm) private var realm
     @ObservedResults(Workout.self) private var workouts
-    @State private var modalIsVisible = false
+    @State private var workout: Workout?
 
     var body: some View {
         NavigationView {
@@ -32,13 +34,19 @@ struct WorkoutsView: View {
             .navigationTitle("Workouts")
             .navigationBarItems(trailing: add)
         }
-        .sheet(isPresented: $modalIsVisible) {
-            EditWorkoutView()
+        .sheet(item: $workout) {
+            EditWorkoutView(workout: $0)
         }
     }
 
     private var add: some View {
-        Button(action: { modalIsVisible = true }) {
+        Button(action: {
+            try? realm.write {
+                let workout = Workout(date: Date(), exercise: Exercise())
+                $workouts.append(workout)
+                self.workout = workout
+            }
+        }) {
             Image(systemName: "plus")
         }
     }

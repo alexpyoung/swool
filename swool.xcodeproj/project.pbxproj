@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FA4253E32BDDDB4F004699DA /* NumberPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4253E22BDDDB4F004699DA /* NumberPickerView.swift */; };
-		FA52BF7E2BDDB5FE00052CE1 /* EditWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52BF7D2BDDB5FE00052CE1 /* EditWorkoutView.swift */; };
+		FA52BF7E2BDDB5FE00052CE1 /* EditExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52BF7D2BDDB5FE00052CE1 /* EditExerciseView.swift */; };
 		FA960DE42BDD9B4A00B8324F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA960DE32BDD9B4A00B8324F /* App.swift */; };
 		FA960DE62BDD9B4A00B8324F /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA960DE52BDD9B4A00B8324F /* WorkoutsView.swift */; };
 		FA960DE82BDD9B4C00B8324F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA960DE72BDD9B4C00B8324F /* Assets.xcassets */; };
@@ -21,11 +21,14 @@
 		FA960DFE2BDDACF700B8324F /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA960DFD2BDDACF700B8324F /* Workout.swift */; };
 		FA9A86972BDFF05D00272562 /* View+Swool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A86962BDFF05D00272562 /* View+Swool.swift */; };
 		FA9A86992BDFFB5300272562 /* EditSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A86982BDFFB5300272562 /* EditSetView.swift */; };
+		FA9A869B2BE0301800272562 /* EditWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A869A2BE0301800272562 /* EditWorkoutView.swift */; };
+		FA9A869F2BE042C300272562 /* Date+Swool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A869E2BE042C300272562 /* Date+Swool.swift */; };
+		FA9A86A32BE059C100272562 /* CGFloat+Swool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A86A22BE059C100272562 /* CGFloat+Swool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA4253E22BDDDB4F004699DA /* NumberPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPickerView.swift; sourceTree = "<group>"; };
-		FA52BF7D2BDDB5FE00052CE1 /* EditWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWorkoutView.swift; sourceTree = "<group>"; };
+		FA52BF7D2BDDB5FE00052CE1 /* EditExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExerciseView.swift; sourceTree = "<group>"; };
 		FA960DE02BDD9B4A00B8324F /* swool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA960DE32BDD9B4A00B8324F /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		FA960DE52BDD9B4A00B8324F /* WorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
@@ -37,6 +40,9 @@
 		FA960DFD2BDDACF700B8324F /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		FA9A86962BDFF05D00272562 /* View+Swool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Swool.swift"; sourceTree = "<group>"; };
 		FA9A86982BDFFB5300272562 /* EditSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSetView.swift; sourceTree = "<group>"; };
+		FA9A869A2BE0301800272562 /* EditWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWorkoutView.swift; sourceTree = "<group>"; };
+		FA9A869E2BE042C300272562 /* Date+Swool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Swool.swift"; sourceTree = "<group>"; };
+		FA9A86A22BE059C100272562 /* CGFloat+Swool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Swool.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				FA9A86962BDFF05D00272562 /* View+Swool.swift */,
+				FA9A869E2BE042C300272562 /* Date+Swool.swift */,
+				FA9A86A22BE059C100272562 /* CGFloat+Swool.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -112,9 +120,10 @@
 			isa = PBXGroup;
 			children = (
 				FA960DE52BDD9B4A00B8324F /* WorkoutsView.swift */,
-				FA52BF7D2BDDB5FE00052CE1 /* EditWorkoutView.swift */,
+				FA52BF7D2BDDB5FE00052CE1 /* EditExerciseView.swift */,
 				FA4253E22BDDDB4F004699DA /* NumberPickerView.swift */,
 				FA9A86982BDFFB5300272562 /* EditSetView.swift */,
+				FA9A869A2BE0301800272562 /* EditWorkoutView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,15 +205,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA52BF7E2BDDB5FE00052CE1 /* EditWorkoutView.swift in Sources */,
+				FA52BF7E2BDDB5FE00052CE1 /* EditExerciseView.swift in Sources */,
 				FA960DFC2BDDA80F00B8324F /* Exercise.swift in Sources */,
 				FA960DE62BDD9B4A00B8324F /* WorkoutsView.swift in Sources */,
 				FA4253E32BDDDB4F004699DA /* NumberPickerView.swift in Sources */,
 				FA9A86972BDFF05D00272562 /* View+Swool.swift in Sources */,
+				FA9A86A32BE059C100272562 /* CGFloat+Swool.swift in Sources */,
 				FA960DE42BDD9B4A00B8324F /* App.swift in Sources */,
+				FA9A869F2BE042C300272562 /* Date+Swool.swift in Sources */,
 				FA9A86992BDFFB5300272562 /* EditSetView.swift in Sources */,
 				FA960DF82BDD9EA800B8324F /* Set.swift in Sources */,
 				FA960DFA2BDDA79900B8324F /* Weight.swift in Sources */,
+				FA9A869B2BE0301800272562 /* EditWorkoutView.swift in Sources */,
 				FA960DFE2BDDACF700B8324F /* Workout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
