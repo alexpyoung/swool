@@ -5,14 +5,19 @@
 //  Created by Alex Young on 4/27/24.
 //
 
+import RealmSwift
 import SwiftUI
 
 @main
-struct swoolApp: App {
+struct swoolApp: SwiftUI.App {
     
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            WorkoutsView()
+                .environment(
+                    \.realmConfiguration,
+                     Realm.Configuration(schemaVersion: 0)
+                )
         }
     }
 }

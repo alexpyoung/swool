@@ -7,8 +7,9 @@
 
 import RealmSwift
 
-final class Exercise: Object {
+final class Exercise: Object, ObjectKeyIdentifiable {
 
+    @Persisted(primaryKey: true) var _id = ObjectId.generate()
     @Persisted var name: String = ""
     @Persisted var sets = List<Set>()
     @Persisted var interSetRest: Int = 0
