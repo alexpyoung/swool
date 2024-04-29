@@ -8,9 +8,9 @@
 import Foundation
 import RealmSwift
 
-final class Set: EmbeddedObject, ObjectKeyIdentifiable {
+final class Set: Object, ObjectKeyIdentifiable {
 
-    let owner = LinkingObjects(fromType: Exercise.self, property: "sets")
+    @Persisted(primaryKey: true) private var _id = ObjectId.generate()
     @Persisted var repetitions: Int = 1
     @Persisted private var _weight: Data?
     var weight: Weight? {
