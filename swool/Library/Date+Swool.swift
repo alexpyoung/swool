@@ -18,7 +18,11 @@ extension Date {
     }
     var isWithinAWeek: Bool {
         let now = Date()
-        return self < now && self > Calendar.current.date(byAdding: .day, value: -7, to: now)!
+        if let sevenDaysAgo = Calendar.current.date(byAdding: .day, value: -7, to: now) {
+            return self < now && self > sevenDaysAgo
+        } else {
+            return false
+        }
     }
     var isThisMonth: Bool {
         return Calendar.current.isDate(self, equalTo: Date(), toGranularity: .month)
@@ -49,7 +53,7 @@ extension Date {
     }
 }
 
-private struct DateView: View {
+private struct DatesView: View {
     private let dates: [Date?] = [
         Date(),
         Calendar.current.date(byAdding: .day, value: -1, to: Date()),
@@ -68,8 +72,8 @@ private struct DateView: View {
     }
 }
 
-struct DateView_Previews: PreviewProvider {
+struct DatesView_Previews: PreviewProvider {
     static var previews: some View {
-        DateView()
+        DatesView()
     }
 }

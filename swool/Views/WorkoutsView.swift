@@ -36,13 +36,14 @@ struct WorkoutsView: View {
         }
         .sheet(item: $workout) {
             EditWorkoutView(workout: $0)
+                .padding(.top, .medium)
         }
     }
 
     private var add: some View {
         Button(action: {
             try? realm.write {
-                let workout = Workout(date: Date(), exercise: Exercise())
+                let workout = Workout()
                 $workouts.append(workout)
                 self.workout = workout
             }

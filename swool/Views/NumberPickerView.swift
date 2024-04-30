@@ -12,16 +12,18 @@ struct NumberPickerView: View {
     @Environment(\.dismiss) var dismiss
     @Binding var existing: Int
     @State private var changed: Int
+    private let values: StrideTo<Int>
     
-    init(existing: Binding<Int>) {
+    init(existing: Binding<Int>, values: StrideTo<Int>? = nil) {
         self._existing = existing
         self._changed = State(initialValue: existing.wrappedValue)
+        self.values = values ?? stride(from: 1, to: 100, by: 1)
     }
     
     var body: some View {
         NavigationView {
             Picker("", selection: $changed) {
-                ForEach(1...100, id: \.self) {
+                ForEach(values.map { $0 }, id: \.self) {
                     Text($0.description)
                 }
             }

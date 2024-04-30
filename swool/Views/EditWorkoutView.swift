@@ -24,10 +24,12 @@ struct EditWorkoutView: View {
                     }
                 Spacer()
             }
-            if let exercise = workout.exercise {
-                EditExerciseView(exercise: exercise)
-            } else {
-                EmptyView()
+            ScrollView {
+                ForEach(workout.exercises) {
+                    EditExerciseView(exercise: $0)
+                        .padding(.vertical, .small)
+                    Spacer().frame(height: .medium)
+                }
             }
         }
         .navigationBarTitleDisplayMode(.inline)
@@ -36,7 +38,11 @@ struct EditWorkoutView: View {
             DatePicker("", selection: $workout.date)
                 .labelsHidden()
                 .datePickerStyle(.graphical)
-                .presentationDetents([.height(400)])
+                .presentationDetents([.height(420)])
         }
+        Button("Add Exercise") {
+            $workout.exercises.append(Exercise())
+        }
+        .buttonStyle(FilledButton())
     }
 }

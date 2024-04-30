@@ -5,9 +5,15 @@
 //  Created by Alex Young on 4/27/24.
 //
 
-enum MassUnit: Codable, CustomStringConvertible {
+import Foundation
+
+enum MassUnit: Codable, CaseIterable, Identifiable, CustomStringConvertible {
     case pound
     case kilogram
+
+    var id: String {
+        self.description
+    }
 
     var description: String {
         switch self {
@@ -17,12 +23,16 @@ enum MassUnit: Codable, CustomStringConvertible {
     }
 }
 
-struct Mass: Codable {
+struct Mass: Codable, CustomStringConvertible {
     let value: Float
     let unit: MassUnit
+
+    var description: String {
+        return "\(value.rounded) \(unit.description)"
+    }
 }
 
 enum Weight: Codable {
-    case bilateral(mass: Mass)
-    case unilateral(left: Mass, right: Mass)
+    case unilateral(mass: Mass)
+    case bilateral(left: Mass, right: Mass)
 }

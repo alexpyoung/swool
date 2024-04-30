@@ -16,7 +16,7 @@ struct swoolApp: SwiftUI.App {
             WorkoutsView()
                 .environment(
                     \.realmConfiguration,
-                     Realm.Configuration(schemaVersion: 0)
+                     Realm.Configuration(schemaVersion: 2)
                 )
         }
     }
