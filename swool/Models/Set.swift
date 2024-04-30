@@ -33,4 +33,11 @@ final class Set: Object, ObjectKeyIdentifiable {
         self.repetitions = repetitions
         self.duration = duration
     }
+
+    convenience init(existing: Set) {
+        self.init()
+        self.repetitions = existing.repetitions
+        self._weight = existing._weight
+        self.duration = existing.duration
+    }
 }

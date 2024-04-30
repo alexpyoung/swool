@@ -9,9 +9,9 @@ import RealmSwift
 import SwiftUI
 
 private struct ListItemView: View {
-
+    
     @ObservedRealmObject var workout: Workout
-
+    
     var body: some View {
         NavigationLink(destination: EditWorkoutView(workout: workout)) {
             Text(workout.date.humanReadable())
@@ -20,11 +20,11 @@ private struct ListItemView: View {
 }
 
 struct WorkoutsView: View {
-
+    
     @Environment(\.realm) private var realm
     @ObservedResults(Workout.self) private var workouts
     @State private var workout: Workout?
-
+    
     var body: some View {
         NavigationView {
             List {
@@ -36,10 +36,10 @@ struct WorkoutsView: View {
         }
         .sheet(item: $workout) {
             EditWorkoutView(workout: $0)
-                .padding(.top, .medium)
+                .padding(.top, .large)
         }
     }
-
+    
     private var add: some View {
         Button(action: {
             try? realm.write {

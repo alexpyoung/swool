@@ -7,24 +7,30 @@
 
 import SwiftUI
 
-struct DoubleTextField: View {
+struct DoubleTextField<T: Hashable>: View {
 
     @Binding var number: Double
+    var focused: FocusState<T>.Binding
+    let field: T
     @State private var input = ""
-
-    init(number: Binding<Double>) {
+    
+    init(number: Binding<Double>, focused: FocusState<T>.Binding, field: T) {
         self._number = number
+        self.focused = focused
+        self.field = field
         self._input = State(initialValue: number.wrappedValue.rounded)
     }
 
     var body: some View {
-        TextField("", text: $input)
+        TextField(number.rounded, text: $input)
+            .focused(focused, equals: field)
             .multilineTextAlignment(.center)
+            .truncationMode(.tail)
+            .keyboardType(.numberPad)
             .padding(.vertical, .xsmall)
             .padding(.horizontal, .small)
             .fixedSize()
             .roundedBorder()
-            .keyboardType(.numberPad)
             .onChange(of: input) { newValue in
                 guard let number = Double(newValue) else { return }
                 self.number = number

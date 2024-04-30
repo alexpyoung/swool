@@ -29,6 +29,10 @@
 		FA9A869B2BE0301800272562 /* EditWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A869A2BE0301800272562 /* EditWorkoutView.swift */; };
 		FA9A869F2BE042C300272562 /* Date+Swool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A869E2BE042C300272562 /* Date+Swool.swift */; };
 		FA9A86A32BE059C100272562 /* CGFloat+Swool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A86A22BE059C100272562 /* CGFloat+Swool.swift */; };
+		FAA783472BE178E1000A93D6 /* UIApplication+Swool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA783462BE178E1000A93D6 /* UIApplication+Swool.swift */; };
+		FAA783492BE17EF7000A93D6 /* ExercisePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA783482BE17EF7000A93D6 /* ExercisePickerView.swift */; };
+		FAA7834B2BE19937000A93D6 /* AlertItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7834A2BE19937000A93D6 /* AlertItemView.swift */; };
+		FAA7834D2BE199D3000A93D6 /* AlertBoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7834C2BE199D3000A93D6 /* AlertBoolView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +57,10 @@
 		FA9A869A2BE0301800272562 /* EditWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWorkoutView.swift; sourceTree = "<group>"; };
 		FA9A869E2BE042C300272562 /* Date+Swool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Swool.swift"; sourceTree = "<group>"; };
 		FA9A86A22BE059C100272562 /* CGFloat+Swool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Swool.swift"; sourceTree = "<group>"; };
+		FAA783462BE178E1000A93D6 /* UIApplication+Swool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Swool.swift"; sourceTree = "<group>"; };
+		FAA783482BE17EF7000A93D6 /* ExercisePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisePickerView.swift; sourceTree = "<group>"; };
+		FAA7834A2BE19937000A93D6 /* AlertItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItemView.swift; sourceTree = "<group>"; };
+		FAA7834C2BE199D3000A93D6 /* AlertBoolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBoolView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,14 +79,17 @@
 		FA4253DD2BDDDA1A004699DA /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				FA9A86962BDFF05D00272562 /* View+Swool.swift */,
-				FA9A869E2BE042C300272562 /* Date+Swool.swift */,
-				FA0858B02BE08C7500A08850 /* NumberFormatter+Swool.swift */,
-				FA9A86A22BE059C100272562 /* CGFloat+Swool.swift */,
+				FAA7834C2BE199D3000A93D6 /* AlertBoolView.swift */,
+				FAA7834A2BE19937000A93D6 /* AlertItemView.swift */,
 				FA1FF5F02BE06334009B2E21 /* ButtonStyle+Swool.swift */,
-				FA0858B42BE090C100A08850 /* IntTextField.swift */,
-				FA0858B62BE095F100A08850 /* FloatTextField.swift */,
+				FA9A86A22BE059C100272562 /* CGFloat+Swool.swift */,
+				FA9A869E2BE042C300272562 /* Date+Swool.swift */,
 				FA0858B82BE0960E00A08850 /* DoubleTextField.swift */,
+				FA0858B62BE095F100A08850 /* FloatTextField.swift */,
+				FA0858B42BE090C100A08850 /* IntTextField.swift */,
+				FA0858B02BE08C7500A08850 /* NumberFormatter+Swool.swift */,
+				FAA783462BE178E1000A93D6 /* UIApplication+Swool.swift */,
+				FA9A86962BDFF05D00272562 /* View+Swool.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -123,9 +134,9 @@
 		FA960DF62BDD9E6200B8324F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA960DFB2BDDA80F00B8324F /* Exercise.swift */,
 				FA960DF72BDD9EA800B8324F /* Set.swift */,
 				FA960DF92BDDA79900B8324F /* Weight.swift */,
-				FA960DFB2BDDA80F00B8324F /* Exercise.swift */,
 				FA960DFD2BDDACF700B8324F /* Workout.swift */,
 			);
 			path = Models;
@@ -134,11 +145,12 @@
 		FA960DFF2BDDB52D00B8324F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FA960DE52BDD9B4A00B8324F /* WorkoutsView.swift */,
 				FA52BF7D2BDDB5FE00052CE1 /* EditExerciseView.swift */,
-				FA4253E22BDDDB4F004699DA /* NumberPickerView.swift */,
 				FA9A86982BDFFB5300272562 /* EditSetView.swift */,
 				FA9A869A2BE0301800272562 /* EditWorkoutView.swift */,
+				FAA783482BE17EF7000A93D6 /* ExercisePickerView.swift */,
+				FA4253E22BDDDB4F004699DA /* NumberPickerView.swift */,
+				FA960DE52BDD9B4A00B8324F /* WorkoutsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,12 +233,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA0858B72BE095F100A08850 /* FloatTextField.swift in Sources */,
+				FAA7834D2BE199D3000A93D6 /* AlertBoolView.swift in Sources */,
 				FA52BF7E2BDDB5FE00052CE1 /* EditExerciseView.swift in Sources */,
 				FA0858B92BE0960E00A08850 /* DoubleTextField.swift in Sources */,
 				FA960DFC2BDDA80F00B8324F /* Exercise.swift in Sources */,
+				FAA783492BE17EF7000A93D6 /* ExercisePickerView.swift in Sources */,
 				FA0858B52BE090C100A08850 /* IntTextField.swift in Sources */,
 				FA960DE62BDD9B4A00B8324F /* WorkoutsView.swift in Sources */,
 				FA4253E32BDDDB4F004699DA /* NumberPickerView.swift in Sources */,
+				FAA7834B2BE19937000A93D6 /* AlertItemView.swift in Sources */,
 				FA9A86972BDFF05D00272562 /* View+Swool.swift in Sources */,
 				FA0858B12BE08C7500A08850 /* NumberFormatter+Swool.swift in Sources */,
 				FA9A86A32BE059C100272562 /* CGFloat+Swool.swift in Sources */,
@@ -238,6 +253,7 @@
 				FA960DFA2BDDA79900B8324F /* Weight.swift in Sources */,
 				FA9A869B2BE0301800272562 /* EditWorkoutView.swift in Sources */,
 				FA960DFE2BDDACF700B8324F /* Workout.swift in Sources */,
+				FAA783472BE178E1000A93D6 /* UIApplication+Swool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

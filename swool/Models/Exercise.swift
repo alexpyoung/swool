@@ -14,4 +14,14 @@ final class Exercise: Object, ObjectKeyIdentifiable {
     @Persisted var sets = List<Set>()
     @Persisted var interSetRest: Int = 0
     @Persisted var notes = ""
+
+    convenience init(existing: Exercise) {
+        self.init()
+        self.name = existing.name
+        existing.sets
+            .map(Set.init)
+            .forEach(self.sets.append)
+        self.interSetRest = existing.interSetRest
+        self.notes = existing.notes
+    }
 }

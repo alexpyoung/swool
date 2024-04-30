@@ -9,10 +9,13 @@ import RealmSwift
 import SwiftUI
 
 struct EditWorkoutView: View {
-
+    
     @ObservedRealmObject var workout: Workout
-    @State private var pickerIsVisible = false
-
+    @State private var exerciseToDelete: Exercise?
+    @State private var alertIsVisible = false
+    @State private var datePickerIsVisible = false
+    @State private var exercisePickerIsVisible = false
+    
     var body: some View {
         VStack {
             HStack {
@@ -20,29 +23,59 @@ struct EditWorkoutView: View {
                     .font(.title)
                     .fontWeight(.bold)
                     .onTapGesture {
-                        pickerIsVisible = true
+                        datePickerIsVisible = true
                     }
                 Spacer()
             }
             ScrollView {
-                ForEach(workout.exercises) {
-                    EditExerciseView(exercise: $0)
-                        .padding(.vertical, .small)
+                ForEach(workout.exercises) { exercise in
+                    EditExerciseView(exercise: exercise) {
+                        exerciseToDelete = $0
+                    }
+                    .padding(.vertical, .small)
                     Spacer().frame(height: .medium)
                 }
             }
+            Button("Add Exercise") { alertIsVisible = true }
+                .buttonStyle(FilledButton())
+            AlertItemView(item: $exerciseToDelete) { exercise in
+                Alert(
+                    title: Text("Are you sure you want to delete \(exercise.name)?"),
+                    primaryButton: .cancel(),
+                    secondaryButton: .destructive(Text("Delete")) {
+                        if let index = workout.exercises.index(of: exercise) {
+                            $workout.exercises.remove(at: index)
+                        }
+                    }
+                )
+            }
+            AlertBoolView(isPresented: $alertIsVisible) {
+                Alert(
+                    title: Text("Would you like to copy an existing exercise or create new one?"),
+                    primaryButton: .default(Text("New")) {
+                        $workout.exercises.append(Exercise())
+                    },
+                    secondaryButton: .default(Text("Copy")) {
+                        exercisePickerIsVisible = true
+                    }
+                )
+            }
         }
         .navigationBarTitleDisplayMode(.inline)
-        .padding(.horizontal, .medium)
-        .sheet(isPresented: $pickerIsVisible) {
+        .padding(.medium)
+        .onTapGesture {
+            UIApplication.shared.resignFirstResponder()
+        }
+        .sheet(isPresented: $datePickerIsVisible) {
             DatePicker("", selection: $workout.date)
                 .labelsHidden()
                 .datePickerStyle(.graphical)
                 .presentationDetents([.height(420)])
         }
-        Button("Add Exercise") {
-            $workout.exercises.append(Exercise())
+        .sheet(isPresented: $exercisePickerIsVisible) {
+            ExercisePickerView {
+                $workout.exercises.append(Exercise(existing: $0))
+            }
         }
-        .buttonStyle(FilledButton())
     }
 }
