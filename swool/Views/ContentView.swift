@@ -13,11 +13,25 @@ struct ContentView: View {
     @AppStorage("colorScheme") private var scheme: SchemeOption = .dark
 
     var body: some View {
-        WorkoutsView()
-            .environment(
-                \.realmConfiguration,
-                 Realm.Configuration(schemaVersion: 3)
-            )
-            .preferredColorScheme(scheme.colorScheme)
+
+        TabView {
+            WorkoutsView()
+                .tabItem {
+                    Label("Workouts", systemImage: "trophy")
+                }
+            ExercisesView()
+                .tabItem {
+                    Label("Exercises", systemImage: "dumbbell")
+                }
+            SettingsView()
+                .tabItem {
+                    Label("Settings", systemImage: "gearshape")
+                }
+        }
+        .environment(
+            \.realmConfiguration,
+             Realm.Configuration(schemaVersion: 3)
+        )
+        .preferredColorScheme(scheme.colorScheme)
     }
 }

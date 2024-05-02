@@ -36,6 +36,7 @@
 		FAA7834F2BE1B356000A93D6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7834E2BE1B356000A93D6 /* SettingsView.swift */; };
 		FAA783512BE1B3A1000A93D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA783502BE1B3A1000A93D6 /* ContentView.swift */; };
 		FAA783552BE3231D000A93D6 /* NumberFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA783542BE3231D000A93D6 /* NumberFieldStyle.swift */; };
+		FAA7835B2BE33136000A93D6 /* ExercisesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7835A2BE33136000A93D6 /* ExercisesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		FAA7834E2BE1B356000A93D6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FAA783502BE1B3A1000A93D6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FAA783542BE3231D000A93D6 /* NumberFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFieldStyle.swift; sourceTree = "<group>"; };
+		FAA7835A2BE33136000A93D6 /* ExercisesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				FA960DE52BDD9B4A00B8324F /* WorkoutsView.swift */,
 				FAA7834E2BE1B356000A93D6 /* SettingsView.swift */,
 				FAA783502BE1B3A1000A93D6 /* ContentView.swift */,
+				FAA7835A2BE33136000A93D6 /* ExercisesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				FAA783492BE17EF7000A93D6 /* ExercisePickerView.swift in Sources */,
 				FA0858B52BE090C100A08850 /* IntTextField.swift in Sources */,
 				FA960DE62BDD9B4A00B8324F /* WorkoutsView.swift in Sources */,
+				FAA7835B2BE33136000A93D6 /* ExercisesView.swift in Sources */,
 				FA4253E32BDDDB4F004699DA /* NumberPickerView.swift in Sources */,
 				FAA7834B2BE19937000A93D6 /* AlertItemView.swift in Sources */,
 				FA9A86972BDFF05D00272562 /* View+Swool.swift in Sources */,

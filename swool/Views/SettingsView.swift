@@ -40,7 +40,7 @@ struct SettingsView: View {
                 Spacer()
             }
             .padding(.medium)
-            .navigationTitle("Secret Menu")
+            .navigationTitle("Settings")
         }
         .preferredColorScheme(scheme.colorScheme)
     }
