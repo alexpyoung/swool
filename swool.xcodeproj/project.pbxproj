@@ -33,6 +33,8 @@
 		FAA783492BE17EF7000A93D6 /* ExercisePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA783482BE17EF7000A93D6 /* ExercisePickerView.swift */; };
 		FAA7834B2BE19937000A93D6 /* AlertItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7834A2BE19937000A93D6 /* AlertItemView.swift */; };
 		FAA7834D2BE199D3000A93D6 /* AlertBoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7834C2BE199D3000A93D6 /* AlertBoolView.swift */; };
+		FAA7834F2BE1B356000A93D6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7834E2BE1B356000A93D6 /* SettingsView.swift */; };
+		FAA783512BE1B3A1000A93D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA783502BE1B3A1000A93D6 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		FAA783482BE17EF7000A93D6 /* ExercisePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisePickerView.swift; sourceTree = "<group>"; };
 		FAA7834A2BE19937000A93D6 /* AlertItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItemView.swift; sourceTree = "<group>"; };
 		FAA7834C2BE199D3000A93D6 /* AlertBoolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBoolView.swift; sourceTree = "<group>"; };
+		FAA7834E2BE1B356000A93D6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FAA783502BE1B3A1000A93D6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,8 @@
 				FAA783482BE17EF7000A93D6 /* ExercisePickerView.swift */,
 				FA4253E22BDDDB4F004699DA /* NumberPickerView.swift */,
 				FA960DE52BDD9B4A00B8324F /* WorkoutsView.swift */,
+				FAA7834E2BE1B356000A93D6 /* SettingsView.swift */,
+				FAA783502BE1B3A1000A93D6 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,6 +239,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA0858B72BE095F100A08850 /* FloatTextField.swift in Sources */,
+				FAA7834F2BE1B356000A93D6 /* SettingsView.swift in Sources */,
+				FAA783512BE1B3A1000A93D6 /* ContentView.swift in Sources */,
 				FAA7834D2BE199D3000A93D6 /* AlertBoolView.swift in Sources */,
 				FA52BF7E2BDDB5FE00052CE1 /* EditExerciseView.swift in Sources */,
 				FA0858B92BE0960E00A08850 /* DoubleTextField.swift in Sources */,
@@ -379,6 +387,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"swool/Preview Content\"";
@@ -408,6 +417,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"swool/Preview Content\"";

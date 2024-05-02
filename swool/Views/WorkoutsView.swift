@@ -23,6 +23,7 @@ struct WorkoutsView: View {
     
     @Environment(\.realm) private var realm
     @ObservedResults(Workout.self) private var workouts
+    @State private var sheetIsVisible = false
     @State private var workout: Workout?
     
     var body: some View {
@@ -32,11 +33,15 @@ struct WorkoutsView: View {
                     .onDelete(perform: $workouts.remove)
             }
             .navigationTitle("Workouts")
+            .navigationBarItems(trailing: settings)
             .navigationBarItems(trailing: add)
         }
         .sheet(item: $workout) {
             EditWorkoutView(workout: $0)
                 .padding(.top, .large)
+        }
+        .sheet(isPresented: $sheetIsVisible) {
+            SettingsView()
         }
     }
     
@@ -50,5 +55,14 @@ struct WorkoutsView: View {
         }) {
             Image(systemName: "plus")
         }
+    }
+
+    private var settings: some View {
+        Button(action: {
+            sheetIsVisible = true
+        }) {
+            Image(systemName: "gearshape")
+        }
+        .preferredColorScheme(.dark)
     }
 }
