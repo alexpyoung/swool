@@ -154,15 +154,15 @@
 		FA960DFF2BDDB52D00B8324F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FAA783502BE1B3A1000A93D6 /* ContentView.swift */,
 				FA52BF7D2BDDB5FE00052CE1 /* EditExerciseView.swift */,
 				FA9A86982BDFFB5300272562 /* EditSetView.swift */,
 				FA9A869A2BE0301800272562 /* EditWorkoutView.swift */,
 				FAA783482BE17EF7000A93D6 /* ExercisePickerView.swift */,
-				FA4253E22BDDDB4F004699DA /* NumberPickerView.swift */,
-				FA960DE52BDD9B4A00B8324F /* WorkoutsView.swift */,
-				FAA7834E2BE1B356000A93D6 /* SettingsView.swift */,
-				FAA783502BE1B3A1000A93D6 /* ContentView.swift */,
 				FAA7835A2BE33136000A93D6 /* ExercisesView.swift */,
+				FA4253E22BDDDB4F004699DA /* NumberPickerView.swift */,
+				FAA7834E2BE1B356000A93D6 /* SettingsView.swift */,
+				FA960DE52BDD9B4A00B8324F /* WorkoutsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

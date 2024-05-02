@@ -8,12 +8,6 @@
 import RealmSwift
 import SwiftUI
 
-extension Binding: Equatable where Value == Int {
-    public static func == (lhs: Binding<Value>, rhs: Binding<Value>) -> Bool {
-        return lhs.wrappedValue == rhs.wrappedValue
-    }
-}
-
 struct ExercisePickerView: View {
     
     let didSelect: (Exercise) -> Void
@@ -29,8 +23,7 @@ struct ExercisePickerView: View {
         .map { $0.value }
         .sorted { $0._id.timestamp > $1._id.timestamp }
     }
-    @State private var fuckyou = 0
-    
+
     var body: some View {
         NavigationView {
             List {
