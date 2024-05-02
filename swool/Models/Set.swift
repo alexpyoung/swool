@@ -8,9 +8,8 @@
 import Foundation
 import RealmSwift
 
-final class Set: Object, ObjectKeyIdentifiable {
+final class Set: EmbeddedObject, ObjectKeyIdentifiable {
 
-    @Persisted(primaryKey: true) private var _id = ObjectId.generate()
     @Persisted var repetitions: Int = 0
     @Persisted private var _weight: Data?
     @Persisted var duration: TimeInterval?
