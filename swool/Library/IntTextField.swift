@@ -24,16 +24,10 @@ struct IntTextField<T: Hashable>: View {
     var body: some View {
         TextField("", text: $input)
             .focused(focused, equals: field)
-            .multilineTextAlignment(.center)
-            .truncationMode(.tail)
-            .padding(.vertical, .xsmall)
-            .padding(.horizontal, .small)
-            .fixedSize()
-            .roundedBorder()
-            .keyboardType(.numberPad)
             .onChange(of: input) { newValue in
                 guard let number = Int(newValue) else { return }
                 self.number = number
             }
+            .textFieldStyle(NumberFieldStyle())
     }
 }

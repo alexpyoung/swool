@@ -24,16 +24,10 @@ struct DoubleTextField<T: Hashable>: View {
     var body: some View {
         TextField(number.rounded, text: $input)
             .focused(focused, equals: field)
-            .multilineTextAlignment(.center)
-            .truncationMode(.tail)
-            .keyboardType(.numberPad)
-            .padding(.vertical, .xsmall)
-            .padding(.horizontal, .small)
-            .fixedSize()
-            .roundedBorder()
             .onChange(of: input) { newValue in
                 guard let number = Double(newValue) else { return }
                 self.number = number
             }
+            .textFieldStyle(NumberFieldStyle())
     }
 }
