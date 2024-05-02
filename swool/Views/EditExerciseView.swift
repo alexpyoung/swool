@@ -41,7 +41,7 @@ struct EditExerciseView: View {
                     .truncationMode(.middle)
                 Button(action: { onDelete(exercise) }, label: {
                     Image(systemName: "delete.left")
-                        .foregroundColor(.red)
+                        .foregroundColor(.gray)
                         .padding(.vertical, .xsmall)
                         .padding(.horizontal, .small)
                 })
@@ -102,7 +102,7 @@ struct EditExerciseView: View {
                             $exercise.sets.remove(at: index)
                         }) {
                             Image(systemName: "trash")
-                                .foregroundColor(.red)
+                                .foregroundColor(.gray)
                                 .padding(.vertical, .xsmall)
                                 .padding(.horizontal, .small)
                         }

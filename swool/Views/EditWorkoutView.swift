@@ -9,13 +9,14 @@ import RealmSwift
 import SwiftUI
 
 struct EditWorkoutView: View {
-    
+
     @ObservedRealmObject var workout: Workout
+    @ObservedResults(Exercise.self) private var exercises
     @State private var exerciseToDelete: Exercise?
     @State private var alertIsVisible = false
     @State private var datePickerIsVisible = false
     @State private var exercisePickerIsVisible = false
-    
+
     var body: some View {
         VStack {
             HStack {
@@ -36,15 +37,27 @@ struct EditWorkoutView: View {
                     Spacer().frame(height: .medium)
                 }
             }
-            Button("Add Exercise") { alertIsVisible = true }
-                .buttonStyle(FilledButton())
+            Button("Add Exercise") {
+                if exercises.isEmpty {
+                    $workout.exercises.append(Exercise())
+                } else {
+                    alertIsVisible = true
+                }
+            }
+            .buttonStyle(FilledButton())
             AlertItemView(item: $exerciseToDelete) { exercise in
                 Alert(
                     title: Text("Are you sure you want to delete \(exercise.name)?"),
                     primaryButton: .cancel(),
                     secondaryButton: .destructive(Text("Delete")) {
-                        if let index = workout.exercises.index(of: exercise) {
-                            $workout.exercises.remove(at: index)
+                        if let index = workout.exercises.index(of: exercise),
+                           let exercise = exercise.thaw(),
+                           let realm = exercise.realm {
+                            try? realm.write {
+                                $workout.exercises.remove(at: index)
+                                realm.delete(exercise)
+                            }
+
                         }
                     }
                 )
