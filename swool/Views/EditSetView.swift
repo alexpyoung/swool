@@ -105,6 +105,7 @@ struct EditSetView: View {
             Spacer()
         }
         .padding(.xsmall)
+        .monospaced()
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 if focused == nil {

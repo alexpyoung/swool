@@ -38,6 +38,7 @@ struct EditExerciseView: View {
             HStack(spacing: 0) {
                 TextField("Exercise", text: $exercise.name)
                     .font(.title2)
+                    .fontWeight(.medium)
                     .truncationMode(.middle)
                 Button(action: { onDelete(exercise) }, label: {
                     Image(systemName: "delete.left")

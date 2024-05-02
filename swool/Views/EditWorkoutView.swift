@@ -29,13 +29,14 @@ struct EditWorkoutView: View {
                 Spacer()
             }
             ScrollView {
-                ForEach(workout.exercises) { exercise in
-                    EditExerciseView(exercise: exercise) {
-                        exerciseToDelete = $0
+                VStack(spacing: .xlarge) {
+                    ForEach(workout.exercises) { exercise in
+                        EditExerciseView(exercise: exercise) {
+                            exerciseToDelete = $0
+                        }
                     }
-                    .padding(.vertical, .small)
-                    Spacer().frame(height: .medium)
                 }
+                .padding(.vertical, .large)
             }
             Button("Add Exercise") {
                 if exercises.isEmpty {

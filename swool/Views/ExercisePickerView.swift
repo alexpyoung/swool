@@ -33,7 +33,7 @@ struct ExercisePickerView: View {
                         Spacer()
                         Image(systemName: "chevron.right")
                             .foregroundColor(.gray)
-                            .font(.system(size: .medium))
+                            .font(.caption)
                     }
                     .onTapGesture {
                         didSelect(exercise)

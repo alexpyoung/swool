@@ -14,6 +14,7 @@
 		FA1FF5F12BE06334009B2E21 /* ButtonStyle+Swool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1FF5F02BE06334009B2E21 /* ButtonStyle+Swool.swift */; };
 		FA4253E32BDDDB4F004699DA /* NumberPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4253E22BDDDB4F004699DA /* NumberPickerView.swift */; };
 		FA52BF7E2BDDB5FE00052CE1 /* EditExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52BF7D2BDDB5FE00052CE1 /* EditExerciseView.swift */; };
+		FA7691AE2BE33BCA00002E47 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7691AD2BE33BCA00002E47 /* ExerciseView.swift */; };
 		FA960DE42BDD9B4A00B8324F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA960DE32BDD9B4A00B8324F /* App.swift */; };
 		FA960DE62BDD9B4A00B8324F /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA960DE52BDD9B4A00B8324F /* WorkoutsView.swift */; };
 		FA960DE82BDD9B4C00B8324F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA960DE72BDD9B4C00B8324F /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		FA1FF5F02BE06334009B2E21 /* ButtonStyle+Swool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonStyle+Swool.swift"; sourceTree = "<group>"; };
 		FA4253E22BDDDB4F004699DA /* NumberPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPickerView.swift; sourceTree = "<group>"; };
 		FA52BF7D2BDDB5FE00052CE1 /* EditExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExerciseView.swift; sourceTree = "<group>"; };
+		FA7691AD2BE33BCA00002E47 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 		FA960DE02BDD9B4A00B8324F /* swool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA960DE32BDD9B4A00B8324F /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		FA960DE52BDD9B4A00B8324F /* WorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				FA9A869A2BE0301800272562 /* EditWorkoutView.swift */,
 				FAA783482BE17EF7000A93D6 /* ExercisePickerView.swift */,
 				FAA7835A2BE33136000A93D6 /* ExercisesView.swift */,
+				FA7691AD2BE33BCA00002E47 /* ExerciseView.swift */,
 				FA4253E22BDDDB4F004699DA /* NumberPickerView.swift */,
 				FAA7834E2BE1B356000A93D6 /* SettingsView.swift */,
 				FA960DE52BDD9B4A00B8324F /* WorkoutsView.swift */,
@@ -256,6 +259,7 @@
 				FA960DE62BDD9B4A00B8324F /* WorkoutsView.swift in Sources */,
 				FAA7835B2BE33136000A93D6 /* ExercisesView.swift in Sources */,
 				FA4253E32BDDDB4F004699DA /* NumberPickerView.swift in Sources */,
+				FA7691AE2BE33BCA00002E47 /* ExerciseView.swift in Sources */,
 				FAA7834B2BE19937000A93D6 /* AlertItemView.swift in Sources */,
 				FA9A86972BDFF05D00272562 /* View+Swool.swift in Sources */,
 				FA0858B12BE08C7500A08850 /* NumberFormatter+Swool.swift in Sources */,
