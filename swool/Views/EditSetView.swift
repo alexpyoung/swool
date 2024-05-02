@@ -14,7 +14,7 @@ private enum Field {
     case left
     case right
     case duration
-    
+
     func previous() -> Self? {
         switch self {
         case .repetitions:
@@ -25,7 +25,7 @@ private enum Field {
             return .left
         }
     }
-    
+
     func next(set: Set) -> Self? {
         switch self {
         case .repetitions:
@@ -48,11 +48,11 @@ private enum Field {
 }
 
 struct EditSetView: View {
-    
+
     let index: Int
     @ObservedRealmObject var set: Set
     @FocusState private var focused: Field?
-    
+
     var body: some View {
         HStack {
             Text("\(index + 1).")
@@ -107,26 +107,26 @@ struct EditSetView: View {
         .padding(.xsmall)
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
-                if focused != nil {
-                    HStack {
-                        Button(action: {
-                            focused = focused?.previous()
-                        }) {
-                            Image(systemName: "chevron.up")
-                        }
-                        .disabled(focused == Field.repetitions)
-                        Button(action: {
-                            focused = focused?.next(set: set)
-                        }) {
-                            Image(systemName: "chevron.down")
-                        }
-                        .disabled([.weight, .right, .duration].contains(focused))
-                        Spacer()
-                        Button(action: {
-                            UIApplication.shared.resignFirstResponder()
-                        }) {
-                            Text("Done")
-                        }
+                if focused == nil {
+                    EmptyView()
+                } else {
+                    Button(action: {
+                        focused = focused?.previous()
+                    }) {
+                        Image(systemName: "chevron.up")
+                    }
+                    .disabled(focused == Field.repetitions)
+                    Button(action: {
+                        focused = focused?.next(set: set)
+                    }) {
+                        Image(systemName: "chevron.down")
+                    }
+                    .disabled([.weight, .right, .duration].contains(focused))
+                    Spacer()
+                    Button(action: {
+                        UIApplication.shared.resignFirstResponder()
+                    }) {
+                        Text("Done")
                     }
                 }
             }

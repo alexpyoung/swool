@@ -22,7 +22,10 @@ private struct ListItemView: View {
 struct WorkoutsView: View {
     
     @Environment(\.realm) private var realm
-    @ObservedResults(Workout.self) private var workouts
+    @ObservedResults(
+        Workout.self,
+        sortDescriptor: SortDescriptor(keyPath: \Workout.date, ascending: false)
+    ) private var workouts
     @State private var sheetIsVisible = false
     @State private var workout: Workout?
     
@@ -38,7 +41,7 @@ struct WorkoutsView: View {
         }
         .sheet(item: $workout) {
             EditWorkoutView(workout: $0)
-                .padding(.top, .large)
+                .padding(.top, .medium)
         }
         .sheet(isPresented: $sheetIsVisible) {
             SettingsView()
